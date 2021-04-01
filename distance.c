@@ -1,35 +1,35 @@
 //WAP to find the distance between two point using 4 functions.
 #include<stdio.h>
 #include<math.h>
-float input() 
+
+int distance(int *x1,int *y1,int *x2,int *y2)
 {
-float a;
-scanf("%f",&a);
-return a;
-}
-float find_distance(gloat x 1,float y1,float x2,float y2)
-{
-float d;
-d=sqrt((x2-x1)*(x2-x1)*(y2-y1)*(y2-y1));
-return d;
+    int d;
+    d=((x2-*x1)(x2-*x1))+((*y2-*y1)(*y2-*y1));
+    return d;
 }
 
-void output(float a,float b,float c,float d,float e)
+int read()
 {
-printf("the distance between(%f,%f) and (%f,%f) is f\n",b,c,d,e,a);
+    int p;
+    printf("Enter the number: ");
+    scanf("%d",&p);
+    return p;
 }
-int main()
+
+void display(int d)
 {
-float x,x1,y,y1,z;
-printf("enter x coordinate\n");
-x=input();
-printf("enter y coordinate\n");
-y=input();
-printf("enter x1 coordinate\n");
-x1=input();
-printf("enter y1 coordinate\n");
-y1=input();
-z=find_distance(x,y,x1,y1);
-output(z,x,y,x1,y1);
-return 0;
+    printf("Distance between the points is:%f", sqrt(d));
+}
+
+void main()
+{
+    int x1,y1,x2,y2,dis;
+    printf("Enter the values of x1, y1, x2, y2 respectively\n");
+    x1=read();
+    y1=read();
+    x2=read();
+    y2=read();
+    dis=distance(&x1,&y1,&x2,&y2);
+    display(dis);
 }
