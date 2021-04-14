@@ -53,7 +53,7 @@ printf("Area of rectangle with vertices(%f,%f),(%f,%f),(%f,%f) is %f\n", p->P1.x
 void output_n(int n,rectangle arr[])
 {
 for (int i=0;i<n;i++){
-outout_one(&arr[i]);
+output_one(&arr[i]);
 }
 }
 int main()
@@ -61,7 +61,8 @@ int main()
 int n=input();
 rectangle arr[n];
 input_n(n,arr);
-copute_n(n,arr);
+compute_n(n,arr);
 output_n(n,arr);
 return 0;
 }
+
