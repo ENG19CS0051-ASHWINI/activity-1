@@ -1,27 +1,28 @@
+#include<stdio.h>
 struct unit_fraction
 {
-    int num;
-    int den;
+int num;
+int den;
 };
 typedef struct unit_fraction unit;
 struct Egyptian_fraction
 {
-          int m;
-          int den[100];
-          unit sum;
+int m;
+int den[100];
+unit sum;
 };
 typedef struct Egyptian_fraction Egyptian;
 int GCD(int a,int b);
-int input ()
+int input()
 {
 int n;
-printf ("Enter the number of fractions\n");
+printf("enter the number of fractions\n");
 scanf("%d",&n);
 return n;
 }
-void input_1(Egyptian *one)
+void input_1(Egyptian*one)
 {
-printf("Enter the number of fractions required to be summed\n");
+printf("enter the number of fractions required to be summed\n");
 scanf("%d",&one->m);
 for (int i=0;i<one->m;i++)
 scanf("%d",&one->den[i]);
@@ -43,10 +44,10 @@ return i;
 }
 return 1;
 }
-void compute_1(Egyptian *one)
+void compute_1(Egyptian*one)
 {
 unit res;
-res.num=0;
+res.num=0
 res.den=1;
 int g;
 for(int i=0;i<one->m;i++)
@@ -64,16 +65,16 @@ void compute_n(Egyptian a[],int n)
 for(int i=0;i<n;i++)
 compute_1(&a[i]);
 }
-void output_1(Egyptian *one)
+void output_1(Egyptian*one)
 {
 for(int i=0;i<(one->m)-1;i++)
-printf("1/%d +",one->den[i]);
-printf("1/%d = %d/%d\n",one->den[(one->m)-1],one->sum.num,one->sum.den);
+printf("1/%d+",one->den[i]);
+printf("1/%d=%d/%d\n",one->den[(one->m)-1],one->sum.num,one->sum.den);
 }
 void output_n(Egyptian a[],int n)
 {
 for(int i=0;i<n;i++)
-output_1(&a[i]);
+output_1(&a[i[);
 }
 int main()
 {
