@@ -47,7 +47,7 @@ return 1;
 void compute_1(Egyptian*one)
 {
 unit res;
-res.num=0
+res.num=0;
 res.den=1;
 int g;
 for(int i=0;i<one->m;i++)
@@ -74,7 +74,7 @@ printf("1/%d=%d/%d\n",one->den[(one->m)-1],one->sum.num,one->sum.den);
 void output_n(Egyptian a[],int n)
 {
 for(int i=0;i<n;i++)
-output_1(&a[i[);
+output_1(&a[i]);
 }
 int main()
 {
