@@ -17,18 +17,22 @@ student students[100];
 };
 typedef struct GradeBook
 gradebook;
+
 void input_1(gradebook*one)
 {
 int i;
 printf("enter course name:");
 scanf("%s",one->course);
 printf("enter no. of weights:");
+
 scanf("%d",&one->num_weights);
 printf("enter no. of students:");
 
 scanf("%d",&one->num_student);
 printf("enter the weights:");
 for(i=0;i<one->num_students;i++)
+scanf("%f",&one->weights[i]);
+for(i=0;i<one->nu_students;i++)
 {
 printf("enter student name:");
 scanf("%s",one->students[i].name);
@@ -55,7 +59,8 @@ else if(res>=70&&res<80)
 return 'C';
 else if(res>=80&&res<90)
 return 'B';
-else return 'A';
+else 
+return 'A';
 }
 void compute_score_1(gradebook*one)
 {
@@ -63,7 +68,7 @@ float w=0;
 for(int i=0;i<one->num_weights;i++)
 w+=one->weights[i];
 int i;
-for(i=0;i<one->num_students;j++)
+for(i=0;i<one->num_students;i++)
 {
 one->students[i].result=0.0;
 for(int j=0;j<one->num_weights;j++)
@@ -83,7 +88,7 @@ void output_1(gradebook*one)
 {
 printf("%s\n",one->course);
 for(int i=0;i<one->num_students;i++)
-printf("%s\t%f\t%c\n",one->students[i].name,one->students[i].grade);
+printf("%s\t%f\t%c\n",one->students[i].name,one->students[i].result,one->students[i].grade);
 }
 void output_n(int n,gradebook gb[])
 {
@@ -100,3 +105,4 @@ input_n(n,gb);
 compute_score_n(n,gb);
 output_n(n,gb);
 }
+
